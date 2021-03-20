@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ikea Images Service</title>
+  <link rel="icon" href="#">
+</head>
+<body>
+  <div id="images" ></div>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+  <script src="http://localhost:3004/index.js" ></script>
+  <script>
+    ReactDOM.render(
+      React.createElement(ImagesService),
+      document.getElementById('images')
+    );
+
+  </script>
+</body>
+</html>
