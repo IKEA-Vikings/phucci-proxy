@@ -17,28 +17,33 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/../public/index.html'));
 });
 
-app.get(`/api/product/:id`, (req, res) => {
-  axios.get(`http://ec2-3-86-58-21.compute-1.amazonaws.com:3003/api/product/${req.params.id}`)
-      .then((result) => res.send(result.data))
-      .catch((err) => console.error('GET PRODUCT SIZES FAILED: ', err));
+app.get('/api/product/:id', (req, res) => {
+  // res.redirect(`http://localhost:3003/api/product/${req.params.id}`);
+  res.redirect(`http://ec2-54-67-28-46.us-west-1.compute.amazonaws.com:5003/api/product/${req.params.id}`);
+
 });
 
-app.get(`/images/org/:id`, (req, res) => {
-  axios.get(`http://ec2-54-67-28-46.us-west-1.compute.amazonaws.com:4004/images/org/${req.params.id}`)
-      .then((result) => res.send(result.data))
-      .catch((err) => console.error('GETTING PRODUCT IMAGES ERROR: ', err));
+app.get('/images/org/:id', (req, res) => {
+  res.redirect(`http://localhost:3004/images/org/${req.params.id}`);
+
 });
 
-app.get(`/api/sizes/:id`, (req, res) => {
-  axios.get(`http://ec2-18-221-34-3.us-east-2.compute.amazonaws.com:3002/api/sizes/${req.params.id}`)
-      .then((result) => res.send(result.data))
-      .catch((err) => console.error('GET PRODUCT SIZES FAILED: ', err));
+app.get('/api/sizes/:id', (req, res) => {
+  res.redirect(`http://ec2-18-221-34-3.us-east-2.compute.amazonaws.com:3002/api/sizes/${req.params.id}`);
+
 });
 
-app.get(`/api/reviews/:id/details`, (req, res) => {
-  axios.get(`http://ec2-100-25-191-161.compute-1.amazonaws.com/api/reviews/${req.params.id}/details`)
-      .then((result) => res.send(result.data))
-      .catch((err) => console.error('GET REVIEWS FAILED: ', err));
+app.get('/api/reviews/:id/details', (req, res) => {
+  res.redirect(`http://ec2-100-25-191-161.compute-1.amazonaws.com/${req.params.id}`);
+
+});
+
+app.get('/similar-products-by-views/:id', (req, res) => {
+  axios.get(`http://18.222.25.224:3005/similar-products-by-views/${req.params.id}`)
+    .then((result) => {
+      res.send(result.data);
+    })
+    .catch((err) => console.error('GET OTHERS ALSO VIEWED FAILED: ', err))
 });
 
 const server = app.listen(port, function () {
