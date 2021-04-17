@@ -24,8 +24,8 @@ app.get('/api/product/:id', (req, res) => {
 });
 
 app.get('/images/org/:id', (req, res) => {
-  res.redirect(`http://localhost:3004/images/org/${req.params.id}`);
-
+  // res.redirect(`http://localhost:3004/images/org/${req.params.id}`);
+  res.redirect(`http://ec2-54-67-28-46.us-west-1.compute.amazonaws.com:3004/images/org/${req.params.id}`);
 });
 
 app.get('/api/sizes/:id', (req, res) => {
