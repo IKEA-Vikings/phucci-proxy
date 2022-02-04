@@ -31,9 +31,8 @@ npm install -g webpack
 npm install
 ```
 
-# Project Name
-
 > Project description
+A proxy server containing all micro-services
 
 
 ## Table of Contents
