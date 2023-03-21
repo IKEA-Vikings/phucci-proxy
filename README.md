@@ -1,6 +1,9 @@
 # Project Name
 
-> Ikea Proxy
+> Vikea Proxy
+
+[![Watch the video](https://i.imgur.com/cyjZeF9.png)](https://drive.google.com/file/d/1clxczrx_AeUCkR0XrMiDyBJDVpqwz4O9/view?usp=share_link)
+
 
 ## Related Projects
 > https://github.com/IKEA-Vikings/phucci-image-carousel
